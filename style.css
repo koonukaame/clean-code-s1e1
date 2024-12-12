@@ -18,7 +18,8 @@
 }
 
 @media (max-width:768px) {
-.img-container { text-align: center;
+  .img-container { 
+    text-align: center;
 }
 }
 .main {
