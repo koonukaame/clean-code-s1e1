@@ -10,8 +10,8 @@
 
 var taskInput=document.getElementById("new-task");//Add a new task.
 var addButton=document.getElementsByTagName("button")[0];//first button
-var incompleteTaskHolder=document.getElementById("todo");//ul of #incompletetasks
-var completedTasksHolder=document.getElementById("done");//completed-tasks
+var incompleteTaskHolder=document.getElementById("list__todo");//ul of #incompletetasks
+var completedTasksHolder=document.getElementById("list__done");//completed-tasks
 
 
 //New task list item
@@ -33,22 +33,22 @@ var createNewTaskElement=function(taskString){
     var deleteButtonImg=document.createElement("img");//delete button image
 
     label.innerText=taskString;
-    label.className='task task-name';
+    label.className='task task__name';
 
     //Each elements, needs appending
-    listItem.className = "task-item";
+    listItem.className = "task__item";
 
     checkBox.type="checkbox";
-    checkBox.className = "checkbox-input"
+    checkBox.className = "form__checkbox-input"
     editInput.type="text";
-    editInput.className="task text-input";
+    editInput.className="task form__text-input";
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="edit btn";
+    editButton.className="edit form__btn";
 
-    deleteButton.className="delete btn";
+    deleteButton.className="delete form__btn";
     deleteButtonImg.src='./remove.svg';
-    deleteButtonImg.className = "delete-img";
+    deleteButtonImg.className = "form__btn-img";
     deleteButtonImg.alt = "delete button";
     deleteButton.appendChild(deleteButtonImg);
 
@@ -90,7 +90,7 @@ var editTask=function(){
     var editInput=listItem.querySelector('input[type=text]');
     var label=listItem.querySelector("label");
     var editBtn=listItem.querySelector(".edit");
-    var containsClass=listItem.classList.contains("edit-mode");
+    var containsClass=listItem.classList.contains("task__item_edit");
     //If class of the parent is .editmode
     if(containsClass){
 
@@ -104,7 +104,7 @@ var editTask=function(){
     }
 
     //toggle .editmode on the parent.
-    listItem.classList.toggle("edit-mode");
+    listItem.classList.toggle("task__item_edit");
 };
 
 
