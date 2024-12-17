@@ -118,7 +118,7 @@
   font-size: 18px;
   width: 226px;
 }
-.task__item >    .form__text-input {
+.task__item > .form__text-input {
   width: 226px;
 }
 .form__btn.delete .form__btn-img {
